@@ -1,0 +1,142 @@
+/* Color Picker Styling */
+input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 50%;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+/* Color Card Styles */
+.color-card {
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    width: 100%;
+}
+
+.color-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.color-card:active {
+    transform: scale(0.95);
+}
+
+.color-preview {
+    aspect-ratio: 1;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.copy-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.color-card:hover .copy-overlay {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .color-preview {
+        min-height: 120px;
+    }
+    
+    .color-card .font-mono {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .color-preview {
+        min-height: 100px;
+    }
+}
+
+/* Modal Styling */
+.modal-backdrop {
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Chart Customization */
+#revenueChart {
+    transition: all 0.2s ease;
+}
+
+.apexcharts-canvas {
+    background: transparent !important;
+}
+
+.dark .apexcharts-text {
+    fill: #9ca3af !important;
+}
+
+.dark .apexcharts-grid line {
+    stroke: rgba(255, 255, 255, 0.1);
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 0.875rem;
+    z-index: 50;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.dark .notification {
+    background-color: white;
+    color: #1a1a1a;
+}
+
+/* Export Modal Code Block */
+.export-code {
+    font-family: 'SF Mono', 'Roboto Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f8fafc;
+    overflow-x: auto;
+}
+
+.dark .export-code {
+    background-color: #111827;
+}

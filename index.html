@@ -1,0 +1,562 @@
+<!---=====================================================================================================
+============================== 🎉 HAYOOO!!! NYARI APA NIH? HEHE... 🎉 =====================================
+==========================================================================================================
+
+                       SELAMAT BELAJAR YA! 😄        /\
+                       SELAMAT BELAJAR YA! 😄       (  )
+                       SELAMAT BELAJAR YA! 😄       (  )
+                       SELAMAT BELAJAR YA! 😄      /|/\|\
+                       SELAMAT BELAJAR YA! 😄     /_||||_\
+
+                         ✨ Semoga sukses dalam belajar! ✨
+                           Terus semangat ya! 💪
+
+==========================================================================================================
+==========================================================================================================
+=======================================================================================================-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+    <meta http-equiv="Expires" content="31536000">
+
+        <!-- HTML Meta Tags -->
+        <title>Vixel Color Generator</title>
+        <meta name="description" content="Generate beautiful, accessible, and consistent color palettes for your design system. Perfect for developers and designers.">
+        
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://vixelify.com/color-generator/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Vixel Color Generator">
+        <meta property="og:description" content="Generate beautiful, accessible, and consistent color palettes for your design system. Perfect for developers and designers.">
+        <meta property="og:image" content="https://opengraph.b-cdn.net/production/images/2a0762cd-d33a-4415-8a6b-c939c0a8b61a.png?token=hGJa8fxHxOCYaO-ly084bsk9ipYW37uFmIQr3Lbppso&height=800&width=1200&expires=33266736992">
+        
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="vixelify.com">
+        <meta property="twitter:url" content="https://vixelify.com/color-generator/">
+        <meta name="twitter:title" content="Vixel Color Generator">
+        <meta name="twitter:description" content="Generate beautiful, accessible, and consistent color palettes for your design system. Perfect for developers and designers.">
+        <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/2a0762cd-d33a-4415-8a6b-c939c0a8b61a.png?token=hGJa8fxHxOCYaO-ly084bsk9ipYW37uFmIQr3Lbppso&height=800&width=1200&expires=33266736992">
+        
+        <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Dark Mode Handler -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <!-- Logo -->
+                    <div class="w-8 h-8 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-lg"></div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 text-transparent bg-clip-text">VixelColor</span>
+                </div>
+                <button id="darkModeToggle" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                    <svg class="w-5 h-5 hidden dark:block text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                    </svg>
+                    <svg class="w-5 h-5 block dark:hidden text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Ad Banner -->
+            <a href="https://member.eitheme.com/aff/yanavix/7zvzl2h/?re=salespage" rel="nofollow noopener" target="_blank" class="block w-full">
+                    <img src="https://member.eitheme.com/wp-content/uploads/2023/10/eiShop-728x90-aff.png" 
+                        alt="eiShop - Theme Toko Online WordPress" 
+                        class="w-full h-auto rounded-lg shadow-sm"
+                        style="max-width: 728px; margin: 0 auto;">
+                </a>
+        
+        <!-- Hero Section -->
+            <div class="text-center mb-16 pt-16">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                    Create Your Perfect
+                    <span class="bg-gradient-to-r from-violet-600 to-indigo-600 text-transparent bg-clip-text">Color System</span>
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Generate beautiful, accessible, and consistent color palettes for your design system. Perfect for developers and designers.
+                </p>
+            </div>
+
+        <!-- Color Input -->
+<div class="max-w-xl mx-auto mb-12">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-1.5">
+        <div class="flex flex-col sm:flex-row gap-2">
+            <!-- Color Picker & Hex Input Group -->
+            <div class="flex-1 flex items-center gap-2 bg-gray-50 dark:bg-gray-700/50 rounded-md p-2">
+                <div class="flex-shrink-0">
+                    <input type="color" 
+                           id="colorPicker" 
+                           class="h-10 w-10 rounded-lg cursor-pointer border-2 border-gray-200 dark:border-gray-600" 
+                           value="#5a03d5">
+                </div>
+                <input type="text" 
+                       id="hexInput" 
+                       class="w-full bg-transparent px-3 py-2 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 rounded-md" 
+                       value="#5a03d5" 
+                       placeholder="Enter hex code...">
+            </div>
+            
+            <!-- Random Button -->
+            <button id="randomBtn" 
+                    class="flex-shrink-0 px-6 py-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-md transition-all text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600 font-medium focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400">
+                <span class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    Random
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+
+        <!-- Color Name and Actions -->
+        <div class="mb-8">
+            <div class="flex items-center justify-between">
+                <h2 id="colorName" class="text-xl font-medium text-gray-900 dark:text-white">Purple Heart</h2>
+                <div class="flex items-center space-x-4">
+                    <button id="exportBtn" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                        Export
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Scale -->
+<div id="colorPalette" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-11 gap-4 mb-16">
+    <!-- Color cards will be generated here -->
+</div>
+
+<!-- Color Accessibility Section -->
+<div class="mb-16">
+    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-8">Color Accessibility</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- WCAG Contrast Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600">
+            <div id="contrastChecker" class="p-6">
+                <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-4">Contrast Checker</h4>
+                <div class="space-y-4">
+                    <!-- Preview Text -->
+                    <div id="contrastPreview" class="p-4 rounded-lg text-center space-y-2">
+                        <p class="text-2xl font-bold">Large Text (18pt+)</p>
+                        <p class="text-base">Normal Text (16pt)</p>
+                    </div>
+                    
+                    <!-- Contrast Ratio -->
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Contrast Ratio:</span>
+                        <span id="contrastRatio" class="font-mono font-medium text-gray-600 dark:text-gray-400"></span>
+                    </div>
+
+                    <!-- WCAG Ratings -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">WCAG AA (Normal Text):</span>
+                            <span id="wcagAA" class="flex items-center gap-1"></span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">WCAG AA (Large Text):</span>
+                            <span id="wcagAALarge" class="flex items-center gap-1"></span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">WCAG AAA:</span>
+                            <span id="wcagAAA" class="flex items-center gap-1"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Recommendations -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600">
+            <div id="colorRecommendations" class="p-6">
+                <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-4">Accessible Color Recommendations</h4>
+                <div class="space-y-4">
+                    <!-- Background Colors -->
+                    <div>
+                        <h5 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Safe Background Colors</h5>
+                        <div id="safeBackgrounds" class="grid grid-cols-5 gap-2"></div>
+                    </div>
+
+                    <!-- Text Colors -->
+                    <div>
+                        <h5 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Safe Text Colors</h5>
+                        <div id="safeText" class="grid grid-cols-5 gap-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Examples -->
+<div class="mb-16">
+    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-8">UI Components</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Product Card - Tetap sama -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600">
+            <div id="productCard" class="p-6">
+                <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-4">Product Card</h4>
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
+                    <div class="relative">
+                        <img src="assets/img/image-card.jpg" alt="Product" class="w-full h-48 object-cover">
+                        <div class="product-badge absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-full">
+                            New Arrival
+                        </div>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div class="text-sm product-category text-gray-600 dark:text-gray-400">Apple</div>
+                        <h3 class="product-title text-lg font-medium line-clamp-2 text-gray-900 dark:text-white">
+                            AirPods 4
+                        </h3>
+                        <div class="flex items-center gap-2">
+                            <span class="product-price text-xl font-semibold text-gray-900 dark:text-white">$299</span>
+                            <span class="product-discount text-sm line-through text-gray-500 dark:text-gray-400">$399</span>
+                            <span class="product-discount-badge text-xs px-2 py-1 rounded-full">-25%</span>
+                        </div>
+                        <button class="product-btn w-full px-4 py-2.5 rounded-lg font-medium transition-all flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common UI Elements -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600">
+            <div id="uiElements" class="p-6">
+                <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-4">Common Elements</h4>
+                <div class="space-y-6">
+                    <!-- Buttons -->
+                    <div class="space-y-3">
+                        <button class="primary-btn w-full px-4 py-2.5 rounded-lg font-medium transition-all">
+                            Primary Button
+                        </button>
+                        <button class="secondary-btn w-full px-4 py-2.5 rounded-lg font-medium border transition-all">
+                            Secondary Button
+                        </button>
+                        <button class="outline-btn w-full px-4 py-2.5 rounded-lg font-medium border-2 transition-all">
+                            Outline Button
+                        </button>
+                    </div>
+
+                    <!-- Alert -->
+                    <div class="alert-box p-4 rounded-lg flex items-center gap-3">
+                        <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p class="text-sm">This is an alert message</p>
+                    </div>
+
+                    <!-- Badge -->
+                    <div class="flex items-center gap-2">
+                        <span class="badge-primary px-2.5 py-1 text-xs font-medium rounded-full">
+                            New
+                        </span>
+                        <span class="badge-secondary px-2.5 py-1 text-xs font-medium rounded-full">
+                            Featured
+                        </span>
+                    </div>
+
+                    <!-- Toggle -->
+                    <label class="flex items-center cursor-pointer">
+                        <div class="relative">
+                            <input type="checkbox" class="toggle-checkbox sr-only">
+                            <div class="toggle-bg w-11 h-6 rounded-full transition-colors"></div>
+                            <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform"></div>
+                        </div>
+                        <span class="ml-3 text-sm font-medium text-gray-900 dark:text-white">Toggle Switch</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+         <!-- Form Elements -->
+<div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600">
+    <div id="formElements" class="p-6">
+        <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-4">Form Elements</h4>
+        <div class="space-y-4">
+            <!-- Email Input -->
+            <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                <div class="relative">
+                    <input type="email" 
+                           class="form-input w-full pl-10 pr-4 py-2.5 rounded-lg border transition-colors bg-white dark:bg-gray-900 text-gray-900 dark:text-white" 
+                           placeholder="Enter your email">
+                    <svg class="w-5 h-5 absolute left-3 top-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                <div class="relative">
+                    <input type="password" 
+                           class="form-input w-full pl-10 pr-4 py-2.5 rounded-lg border transition-colors bg-white dark:bg-gray-900 text-gray-900 dark:text-white" 
+                           placeholder="Enter your password">
+                    <svg class="w-5 h-5 absolute left-3 top-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" class="form-checkbox w-4 h-4 rounded transition-colors">
+                    <label class="text-sm text-gray-900 dark:text-white">Remember me</label>
+                </div>
+                <div class="text-sm text-gray-900 dark:text-white">Forgot password?</div>
+                </div>
+            <!-- Login Button -->
+                <button type="submit" class="login-btn w-full px-4 py-2.5 rounded-lg font-medium transition-all">
+                    Sign in
+            </button>
+            </div>
+    </div>
+</div>
+    </div>
+</div>
+
+<!-- Guide Section -->
+<div class="mb-12">
+    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-6">Color System Guide</h3>
+    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600">
+        <div class="p-6 space-y-6">
+            <!-- Color Usage -->
+            <div>
+                <h4 class="font-medium text-gray-900 dark:text-white mb-3">Penggunaan Shade</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="space-y-2">
+                        <h5 class="text-sm font-medium text-gray-700 dark:text-gray-300">Light Shades (50-200)</h5>
+                        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                            <li>• Background colors</li>
+                            <li>• Hover states</li>
+                            <li>• Disabled states</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="text-sm font-medium text-gray-700 dark:text-gray-300">Medium Shades (300-600)</h5>
+                        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                            <li>• Primary UI elements</li>
+                            <li>• Buttons</li>
+                            <li>• Active states</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="text-sm font-medium text-gray-700 dark:text-gray-300">Dark Shades (700-950)</h5>
+                        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                            <li>• Text colors</li>
+                            <li>• Borders</li>
+                            <li>• Shadows</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips -->
+            <div>
+                <h4 class="font-medium text-gray-900 dark:text-white mb-3">Tips</h4>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Hindari warna ekstrim seperti pure white (#FFFFFF) atau pure black (#000000) untuk hasil shade yang lebih baik.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Gunakan shade 600 sebagai warna utama dan acuan untuk generate shade lainnya.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Tekan spacebar untuk generate warna random, atau masukkan kode HEX manual untuk warna spesifik.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ad Banner (In-content) -->
+<!-- <div class="w-full max-w-7xl mx-auto mb-16">
+    <div class="w-full h-[250px] bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-500 dark:text-gray-400">
+        <span>Advertisement (728x250)</span>
+    </div>
+</div> -->
+
+    <!-- Footer -->
+<footer class="bg-gray-50 dark:bg-gray-900 mt-auto">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-lg"></div>
+                <span class="text-lg font-bold bg-gradient-to-r from-violet-600 to-indigo-600 text-transparent bg-clip-text">VixelColor</span>
+            </div>
+            
+            <!-- Copyright -->
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+                © 2024 VixelColor. Crafted with 
+                <span class="text-red-500">❤️</span> 
+                for designers and developers.
+            </p>
+            
+            <!-- Social Links -->
+            <div class="flex items-center gap-4">
+                <a href="https://www.facebook.com/yana.vix" 
+                   class="text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Facebook
+                </a>
+                <a href="https://wa.me/6283114461610" 
+                   class="text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Whatsapp
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Export Modal -->
+<div id="exportModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50">
+        <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Export Color Scale</h3>
+                    <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <pre id="colorConfig" class="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg text-sm overflow-x-auto text-gray-900 dark:text-gray-100"></pre>
+                    <button onclick="copyConfig()" class="flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">
+                        Copy to clipboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Urutan yang benar -->
+    <script src="./assets/js/constants/colors.js"></script>
+    <script src="./assets/js/colorUtils.js"></script>
+    <script src="./assets/js/components/modal.js"></script>
+    <script src="./assets/js/components/notification.js"></script>
+    <script src="./assets/js/components/examples.js"></script>
+    <script src="./assets/js/components/accessibility.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    <script>
+        // Disable right click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    
+        // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+        document.addEventListener('keydown', function(e) {
+            if (
+                (e.keyCode === 123) || // F12
+                (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
+                (e.ctrlKey && e.shiftKey && e.keyCode === 74) || // Ctrl+Shift+J
+                (e.ctrlKey && e.keyCode === 85) // Ctrl+U
+            ) {
+                e.preventDefault();
+            }
+        });
+    
+        // Disable view source
+        document.onkeypress = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                return false;
+            }
+        }
+    
+        // Disable developer tools
+        function disableDevTools() {
+            // Check if DevTools is open
+            const devtools = /./;
+            devtools.toString = function() {
+                this.opened = true;
+            }
+    
+            console.log('%c', devtools);
+    
+            setInterval(function() {
+                if(devtools.opened) {
+                    devtools.opened = false;
+                    // Optional: Redirect or show warning
+                    // window.location.href = '/';
+                }
+            }, 1000);
+        }
+    
+        // Initialize protection
+        disableDevTools();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Utility Classes */
+
+/* Transitions */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Focus States */
+.focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.focus-within {
+    outline: none;
+}
+
+/* Hover States */
+.hover-shadow {
+    transition: box-shadow 0.2s ease;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Layout Utilities */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-center {
+    display: grid;
+    place-items: center;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+    
+    .grid-cols-responsive {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Text Utilities */
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-break-word {
+    word-break: break-word;
+}
+
+/* Spacing Utilities */
+.gap-responsive {
+    gap: clamp(1rem, 2vw, 2rem);
+}
+
+/* Aspect Ratio */
+.aspect-square {
+    aspect-ratio: 1;
+}
+
+.aspect-video {
+    aspect-ratio: 16/9;
+}
+
+/* Z-index Utilities */
+.z-modal {
+    z-index: 50;
+}
+
+.z-notification {
+    z-index: 60;
+}
+
+/* Cursor Utilities */
+.cursor-copy {
+    cursor: copy;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+

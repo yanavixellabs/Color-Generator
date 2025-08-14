@@ -1,0 +1,201 @@
+/* Base Styles & Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Base Typography */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Dark Mode Transitions */
+.dark-mode-transition {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4a5568;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Color Input Container Styles */
+.color-input-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+/* Color Picker Input */
+input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 50%;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+/* Hex Input */
+#hexInput {
+    min-width: 120px;
+    flex: 1;
+}
+
+/* Random Button */
+#randomBtn {
+    min-width: 100px;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .color-input-container {
+        flex-direction: row;
+        padding: 0.5rem;
+    }
+    
+    #hexInput {
+        width: calc(100% - 60px);
+    }
+    
+    #randomBtn {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/* Input Focus States */
+#hexInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Color Input Styling */
+.color-input-group {
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Color Picker Custom Styling */
+input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 8px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 6px;
+}
+
+/* Hex Input Styling */
+#hexInput {
+    font-family: 'SF Mono', 'Roboto Mono', monospace;
+    letter-spacing: 0.025em;
+    transition: all 0.2s ease;
+}
+
+#hexInput::placeholder {
+    color: #9CA3AF;
+}
+
+/* Random Button Hover Effect */
+#randomBtn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+#randomBtn:hover {
+    transform: translateY(-1px);
+}
+
+#randomBtn:active {
+    transform: translateY(1px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    #randomBtn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    #hexInput {
+        text-align: left;
+        font-size: 0.875rem;
+    }
+}
+
+/* Focus States */
+.focus-within-ring {
+    position: relative;
+}
